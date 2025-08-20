@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "${HOST_PORT:-8181}:80"
+#    environment:
+#      - HOST_PORT=
+
+# Copilot: Cria um docker-compose file que faça a build do dockerfile mas com uma variavel na porta do host adicione a o valor da variavel vai ser 9099
