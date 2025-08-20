@@ -1,0 +1,17 @@
+# Copilot cria um dockerfile para servir arquivos html e js e adiciona esta linha como comentario no inicio
+
+# Usa uma imagem leve do Nginx
+FROM nginx:alpine
+
+# Copia todos os arquivos HTML e JS para o diretório padrão do Nginx
+# COPY . /usr/share/nginx/html
+COPY index.html /usr/share/nginx/html
+COPY script.js /usr/share/nginx/html
+# Expõe a porta padrão do Nginx
+EXPOSE 80
+
+# Comando padrão para iniciar o Nginx
+CMD ["nginx", "-g", "daemon off;"]
+
+# docker build -t testpage .
+# docker run -d -p 8080:80 testpage
